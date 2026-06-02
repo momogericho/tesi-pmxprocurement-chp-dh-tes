@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @page {
+            size: A4;
+            margin-top: 3.5cm;
+            margin-bottom: 3.5cm;
+            margin-left: 4.5cm;
+            margin-right: 3.0cm;
+        }
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 13pt;
+            line-height: 18pt;
+            text-align: justify;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+            text-indent: 1.25cm;
+        }
+        p.no-indent {
+            text-indent: 0;
+        }
+        .blank-line {
+            height: 18pt;
+        }
+        .caption-table {
+            font-size: 11pt;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18pt auto;
+            font-size: 11pt;
+            line-height: 14pt;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .chapter-header {
+            font-size: 22pt;
+            font-weight: bold;
+            text-indent: 0;
+            margin-bottom: 6px;
+        }
+        .chapter-title {
+            font-size: 20pt;
+            font-weight: bold;
+            text-indent: 0;
+            margin-bottom: 24pt;
+        }
+        h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            text-indent: 0;
+            margin-top: 24pt;
+            margin-bottom: 12pt;
+            page-break-after: avoid;
+        }
+        h2 {
+            font-size: 16pt;
+            font-weight: bold;
+            text-indent: 0;
+            margin-top: 18pt;
+            margin-bottom: 6pt;
+            page-break-after: avoid;
+        }
+        h3 {
+            font-size: 13pt;
+            font-weight: bold;
+            font-style: italic;
+            text-indent: 0;
+            margin-top: 12pt;
+            margin-bottom: 6pt;
+            page-break-after: avoid;
+        }
+        /* Stile speciale per la copertina */
+        .cover-page {
+            page-break-after: always;
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .university {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .collegio {
+            font-size: 14pt;
+            margin-bottom: 48pt;
+        }
+        .degree {
+            font-size: 14pt;
+            font-style: italic;
+            margin-bottom: 60pt;
+        }
+        .thesis-type {
+            font-size: 16pt;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 48pt;
+        }
+        .title {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 80pt;
+            line-height: 30pt;
+        }
+        .roles-container {
+            width: 100%;
+            margin-bottom: 80pt;
+            font-size: 13pt;
+        }
+        .relatore {
+            float: left;
+            text-align: left;
+            width: 45%;
+        }
+        .candidato {
+            float: right;
+            text-align: right;
+            width: 45%;
+        }
+        .clear {
+            clear: both;
+        }
+        .date {
+            font-size: 13pt;
+            margin-top: 40pt;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cover-page">
+        <div class="university">POLITECNICO DI TORINO</div>
+        <div class="collegio">Collegio di Ingegneria Gestionale</div>
+        <div class="degree">Corso di Laurea Magistrale in Ingegneria Gestionale</div>
+        <div class="blank-line"></div>
+        <div class="thesis-type">ELABORATO DI LAUREA</div>
+        <div class="blank-line"></div>
+        <div class="title">La cogenerazione nei sistemi multi-energia urbani:<br>ottimizzazione gestionale e modelli di procurement</div>
+        
+        <div class="roles-container">
+            <div class="relatore">
+                <strong>Relatore:</strong><br>
+                OTTAVIANI FILIPPO MARIA <br>
+                REBUGLIO MASSIMO
+            </div>
+            <div class="candidato">
+                <strong>Candidato:</strong><br>
+                Hadj Mahmoud Mohamed El Hadi
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="date">Luglio 2026</div>
+    </div>
+
+    <h1>TESI: LA COGENERAZIONE NEI SISTEMI URBANI E INDUSTRIALI</h1>
+    
+    <p>La cogenerazione (Combined Heat and Power, CHP) rappresenta una delle soluzioni più consolidate per l'efficientamento energetico nei sistemi industriali e urbani, grazie alla produzione simultanea di energia elettrica e calore utile a partire da un'unica fonte primaria[cite: 5]. A differenza dei sistemi convenzionali, nei quali una quota significativa dell'energia termica viene dissipata, gli impianti CHP consentono il recupero e la valorizzazione del calore di scarto proveniente dai gas di combustione e dai circuiti di raffreddamento, raggiungendo rendimenti globali compresi tra il 75% e il 90%, in linea con gli standard europei di Cogenerazione ad Alto Rendimento (CAR)[cite: 5].</p>
+    
+    <p>L'integrazione della cogenerazione con reti di teleriscaldamento (District Heating, DH) rappresenta un'evoluzione sistemica di tale approccio, in cui il calore recuperato viene distribuito su scala territoriale attraverso infrastrutture dedicate, alimentando utenze residenziali, commerciali e industriali[cite: 5]. In questo contesto, l'impianto CHP assume il ruolo di nodo centrale di un sistema energetico urbano, contribuendo alla riduzione del consumo di combustibili fossili, alla diminuzione delle emissioni climalteranti e alla razionalizzazione delle infrastrutture energetiche[cite: 5]. Le reti operano tipicamente con temperature di mandata comprese tra 70°C e 120°C e ritorni tra 40°C e 60°C con perdite termiche contenute entro il 5-15%, rendendo tali sistemi particolarmente efficienti su scala urbana[cite: 5].</p>
+    
+    <p>A livello globale, i sistemi di cogenerazione associati a reti di teleriscaldamento rappresentano una componente significativa dei sistemi energetici urbani nei paesi con climi freddi o politiche energetiche avanzate[cite: 5]. Si stimano oltre 10.000 sistemi di teleriscaldamento nel mondo, con una forte concentrazione in Europa, Cina e Russia[cite: 5]. La cogenerazione è integrata in una quota rilevante di queste reti, soprattutto nei contesti urbani ad alta densità[cite: 5].</p>
+    
+    <p>L'integrazione con sistemi di accumulo termico (TES) è invece più recente ma in rapida crescita[cite: 5]. Nei paesi del Nord Europa, in particolare Danimarca, Svezia e Finlandia, i sistemi CHP+DH+TES sono ormai standard progettuali consolidati[cite: 5]. La Danimarca rappresenta il caso più avanzato, con oltre il 60-70% delle reti di teleriscaldamento dotate di accumuli termici, spesso sotto forma di grandi serbatoi d'acqua o pit thermal energy storage (PTES) di scala stagionale[cite: 5]. In questi contesti, il TES è utilizzato per ottimizzare l'interazione tra cogenerazione, rinnovabili e mercato elettrico[cite: 5].</p>
+    
+    <p>Dal punto di vista tecnologico, le configurazioni CHP+DH si articolano principalmente in tre architetture: sistemi a contropressione (back-pressure), caratterizzati da elevata efficienza ma limitata flessibilità operativa; sistemi a condensazione con spillamento (extraction-condensing), che consentono una regolazione dinamica tra produzione elettrica e termica; e sistemi integrati con accumulo termico (Thermal Energy Storage, TES), che rappresentano l'evoluzione più avanzata grazie alla capacità di disaccoppiare temporalmente produzione e domanda di calore[cite: 5].</p>
+    
+    <p>L'integrazione del TES introduce un elemento chiave per la flessibilità dei sistemi energetici: i serbatoi di accumulo, generalmente basati su acqua stratificata o altre tecnologie di stoccaggio termico, permettono di accumulare energia termica durante periodi di bassa domanda o basso costo dell'elettricità e di rilasciarla nei momenti di picco[cite: 5]. Questo consente non solo un miglior utilizzo degli impianti CHP, ma anche una maggiore integrazione con fonti rinnovabili intermittenti e con mercati energetici liberalizzati, trasformando i sistemi CHP+DH+TES in veri e propri sistemi multi-energia ottimizzati[cite: 5].</p>
+    
+    <p>Nonostante la maturità tecnologica di queste soluzioni, la realizzazione di impianti CHP integrati con reti di teleriscaldamento e sistemi di accumulo termico presenta una complessità progettuale, gestionale e finanziaria significativa[cite: 5]. Tali progetti richiedono il coordinamento di molteplici stakeholder, tra cui enti pubblici, utility energetiche, investitori privati e utenti finali, oltre a una gestione integrata delle fasi di progettazione, permitting, costruzione e commissioning[cite: 5]. In questo contesto, il project management assume un ruolo centrale nel determinare il successo tecnico ed economico degli interventi[cite: 5].</p>
+
+    <h1>FOCUS DELLA RICERCA</h1>
+    
+    <p>Nel contesto della realizzazione di infrastrutture energetiche complesse come i sistemi CHP integrati con teleriscaldamento e accumulo termico, la scelta dell'approccio di project management e del modello di procurement riveste un ruolo determinante[cite: 5]. L'approccio waterfall si basa su una pianificazione sequenziale e rigidamente strutturata delle fasi (progettazione, approvazione, costruzione), risultando particolarmente adatto a progetti con requisiti ben definii e basso grado di incertezza; al contrario, l'approccio Agile in construction introduce logiche iterative e adattive, favorendo una maggiore flessibilità nella gestione delle modifiche progettuali e nell'integrazione progressiva di tecnologie complesse, sebbene richieda un elevato coordinamento tra gli stakeholder[cite: 5].</p>
+    
+    <p>Parallelamente, il modello di appalto tradicional (design-bid-build) prevede una netta separazione tra progettazione e costruzione, con il committente che mantiene il controllo diretto ma assume gran parte dei rischi; il modello di Public-Private Partnership (PPP), invece, si basa su una collaborazione di lungo periodo tra settore pubblico e privato, con una condivisione dei rischi, degli investimenti e dei benefici, risultando particolarmente adatto per progetti infrastrutturali complessi ad alta intensità di capitale, come le reti di teleriscaldamento integrate con cogenerazione e sistemi di accumulo[cite: 5].</p>
+    
+    <p>La presente ricerca si concentra sulla revisione di letteratura e la discussione dei risultati sul project management applicato agli impianti di cogenerazione integrati con reti di teleriscaldamento e sistemi di accumulo termico prendendo come lente di ricerca due dimensioni critiche di analisi: da un lato, l'approccio metodologico alla gestione del progetto, con il confronto tra modelli tradizionali sequenziali (waterfall) e approcci iterativi e flessibili (Agile in construction); dall'altro, il modello di procurement e finanziamento, con la distinzione tra appalto tradizionale (design-bid-build) e partenariati pubblico-privati (Public-Private Partnership, PPP)[cite: 5].</p>
+    
+    <p>La presente ricerca si concentra sulla revisione di letteratura e la discussione dei risultati sul project management applicato alle reti di teleriscaldamento prendendo come lente di ricerca due dimensioni critiche di analisi: da un lato, l'approccio metodologico alla gestione del progetto, con il confronto tra modelli tradizionali sequenziali (waterfall) e approcci iterativi e flessibili (Agile in construction); dall'altro, il modello di procurement e finanziamento, con la distinzione tra appalto tradizionale (design-bid-build) e partenariati pubblico-privati (Public-Private Partnership, PPP)[cite: 5].</p>
+
+    <h1>1. INTRODUZIONE DEI CONCETTI CHIAVE</h1>
+    <h2>Project Management, Modelli Contrattuali e Cogenerazione con Teleriscaldamento</h2>
+    
+    <h3>1.1 L'evoluzione del Project Management nelle Costruzioni</h3>
+    
+    <p><strong>a. Inquadramento: specificità del project management in ambito edilizio-impiantistico</strong><br>
+    Il project management applicato all'edilizia e all'impiantistica presenta caratteristiche strutturali che lo distinguono profondamente da altri domini applicativi, in primo luogo dallo sviluppo software, nel quale sono nate le principali teorie metodologiche del project management contemporaneo[cite: 5]. Comprendere queste specificità è prerequisito per valutare criticamente l'applicabilità dei modelli waterfall e agile in questo contesto[cite: 5]. Un progetto edilizio produce un manufatto fisico unico, radicato in un sito specifico, soggetto a vincoli normativi stratificati (Codice dei contratti pubblici, Testo Unico Edilizia, normative tecniche UNI/CEI, norme di prevenzione incendi, D.Lgs. 81/2008) e realizzato da una filiera di soggetti plurimi - committente, progettisti, direttore dei lavori, impresa appaltatrice, subappaltatori, collaudatori - ciascuno con responsabilità giuridiche autonome e distinte[cite: 5].</p>
+    
+    <p>Questa complessità relazionale e normativa condiziona in modo determinante le scelte metodologiche di gestione[cite: 5]. L'ingegneria impiantistica - meccanica, elettrica, idraulica, di automazione e controllo (MEP: Mechanical, Electrical, Plumbing) - costituisce un livello aggiuntivo di complessità tecnica[cite: 5]. Gli impianti servono l'edificio ma dipendono dalla struttura e dall'architettura per i propri percorsi, cavedi, forometrie e potenze: si collocano al crocevia tra la sequenza costruttiva edilizia e le esigenze funzionali del committente[cite: 5]. Come osserva Samaratova (2024), in settori dove "structure, predictability and compliance are essential", il waterfall mantiene una rilevanza operativa che nessun approccio puramente iterativo può sostituire integralmente[cite: 1, 5]. Al tempo stesso, la crescente complessità dei sistemi edilizi contemporanei (edifici a destinazione mista, interventi di retrofit energetico su edifici storici, sistemi di Building Automation & Control (BAS/BMS), micro-reti energetiche) introduce gradi di incertezza tecnica e variabilità dei requisiti che rendono il waterfall puro insufficiente[cite: 5]. La questione non è quale dei due modelli sia migliore in assoluto, ma quale combinazione sia razionalmente ottimale per un dato progetto[cite: 2, 5].</p>
+    
+    <p><strong>b. La complessità sistemica della cogenerazione e del teleriscaldamento: un banco di prova per i modelli di PM</strong><br>
+    Un impianto di cogenerazione (CHP) è un esempio paradigmatico di ingegneria pesante sequenziale: la centrale termica, con le sue fondamenta, la sala macchine, i sistemi di recupero termico e i collegamenti alle utenze, segue una sequenza costruttiva fisicamente vincolata che richiede l'approccio waterfall[cite: 5]. Le specifiche tecniche (potenza elettrica e termica, combustibile, schema P&ID, normative CEI e UNI applicabili) devono essere completamente definite prima dell'inizio dei lavori[cite: 5]. Una modifica all'intercooler del motore a cogenerazione dopo la posa dei macchinari comporta costi e tempi non recuperabili[cite: 5].</p>
+    
+    <p>La rete di teleriscaldamento (DH) che distribuisce il calore prodotto dall'impianto CHP presenta, invece, caratteristiche profondamente diverse[cite: 5]. Si sviluppa nel sottosuolo urbano, attraverso strade, piazze e aree con sottoservizi spesso non correttamente mappati[cite: 5]. La sua costruzione per tratti successivi - ciascuno condizionato dalle interferenze scoperte in cantiere - è strutturalmente agile: il tracciato finale raramente corrisponde al progetto esecutivo iniziale, e la pianificazione a look-ahead settimanale è l'unico strumento che consente di non bloccare il cantiere a fronte di imprevisti sotterranei[cite: 5].</p>
+    
+    <p>Infine, l'accumulo termico (TES) e il sistema di controllo predittivo (MPC/Digital Twin) operano secondo logiche software iterative: la calibrazione degli algoritmi di carica/scarica del TES, la taratura del modello predittivo di domanda termica e l'ottimizzazione del dispatch tra CHP e accumulo sono processi essenzialmente agile, che migliorano iterativamente nel corso dell'esercizio[cite: 5]. Guelpa et al. (2021) dimostrano che l'integrazione di un controller MPC su impianti CHP con TES in reti DH riduce i costi operativi e consente la piena valorizzazione della cogenerazione; tale ottimizzazione non è realizzabile in fase di progettazione waterfall, ma emerge progressivamente dalla gestione dei dati reali di esercizio[cite: 5]. La presente ricerca utilizzerà questa eterogeneità strutturale (waterfall per la centrale CHP, agile/ibrido per la rete DH, agile/software per il TES e il controllo) come chiave interpretativa della letteratura sui progetti CHP+DH e come base per la matrice tassonomica PM - Procurement presentata in § 1.3[cite: 5].</p>
+    
+    <p><strong>c. Il Modello Waterfall nell'Edilizia e nell'Impiantistica</strong><br>
+    <em>c.i) Affinità strutturale tra processo costruttivo e logica waterfall:</em> L'adozione del modello waterfall nel settore edilizio non è il risultato di una scelta metodologica consapevole: è la trascrizione gestionale di una necessità fisica[cite: 5]. Come afferma Samaratova (2024), il settore delle costruzioni è intrinsecamente waterfall, perché ogni fase è prerequisito fisico e tecnico della successiva: non è possibile realizzare la struttura portante prima delle fondamenta, né installare gli impianti idraulici prima che le murature siano completate, né posare le finiture prima che gli impianti siano ispezionati[cite: 1, 5]. Questa sequenzialità si riflette direttamente nella struttura normativa e contrattuale del settore[cite: 5]. Il processo edilizio italiano, regolato dal Codice dei contratti pubblici (D.Lgs. 36/2023) e dalle Linee guida del Consiglio Superiore dei Lavori Pubblici, articola il ciclo di vita del progetto in fasi formalmente distinte e sequenziali: studio di fattibilità tecnico-economica, progetto di fattibilità, progetto definitivo, progetto esecutivo, direzione lavori, collaudo[cite: 5]. Per l'impiantistica, questa struttura si arricchisce di ulteriori livelli di formalizzazione tecnica[cite: 5]. Il D.M. 37/2008 disciplina la progettazione e realizzazione degli impianti negli edifici, imponendo che l'installatore produca una dichiarazione di conformità (DdC)[cite: 2, 5].</p>
+    
+    <p><em>c.ii) Vantaggi operativi del waterfall in cantiere:</em> La pianificazione upfront consente di produrre computi metrici affidabili, fondamentali per le gare a corpo[cite: 5]. Petersen et al. (2009) identificano nella separazione strutturale tra fasi un meccanismo di controllo della qualità: l'output di ciascuna fase viene formalmente approvato prima che la successiva abbia inizio, creando checkpoint di verifica[cite: 2, 5]. Nelle costruzioni, questo meccanismo si concretizza nei collaudi intermedi (statico, idraulico, elettrico) e nel collaudo finale, che rappresentano gate formali di accettazione[cite: 2, 5].</p>
+    
+    <p><em>c.iii) Criticità del waterfall in cantiere:</em> Petersen et al. (2009) dimostrano empiricamente che il 41% del lead-time complessivo viene consumato nella gestione dei requisiti, con una quota significativa che deve essere rielaborata durante l'esecuzione[cite: 2, 5]. Nelle costruzioni, le varianti progettuali in corso d'opera sono la norma, non l'eccezione[cite: 5]. Per l'impiantistica, il problema è più acuto negli interventi di retrofit: le condizioni del costruito (tracce nascoste, interferenze tra impianti esistenti, cavedi insufficienti) vengono scoperte durante l'esecuzione[cite: 2, 5].</p>
+    
+    <p><strong>d. L'Approccio Agile nell'Edilizia e nell'Impiantistica</strong><br>
+    <em>d.i) Perché l'agile puro non è direttamente trasferibile alle costruzioni:</em> L'applicazione integrale dei principi agile ai progetti edilizi e impiantistici incontra limiti strutturali non derivanti da resistenza culturale, ma dalla natura fisica del dominio[cite: 5]. Thesing et al. (2021) identificano tre criteri di esclusione particolarmente rilevanti: la non decomponibilità del risultato in incrementi reversibili, la natura di "one-shot game" di molte attività costruttive (un getto in calcestruzzo, la posa di un impianto sottotraccia), e la criticità operativa di sistemi che non ammettono stati intermedi non validati (impianti antincendio, impianti medicali)[cite: 3, 5]. A questi vincoli tecnici si aggiunge il framework contrattuale: il contratto di appalto a corpo fissa scope, prezzo e tempi in modo vincolante[cite: 5]. Le norme tecniche obbligatorie (CEI 64-8, UNI 10412, D.P.R. 462/2001) impongono specifiche non negoziabili indipendentemente dall'approccio gestionale[cite: 5].</p>
+    
+    <p><em>d.ii) Dove l'agile produce valore concreto (inclusa l'incertezza del sottosuolo urbano):</em> Mohamed e Moselhi (2019) dimostrano che principi agile selettivamente applicati producono benefici misurabili[cite: 4, 5]. Il loro framework ibrido (Planning, Data Acquisition, Progress Reporting & Control) adatta i principi agile alle specificità costruttive senza richiedere la ridefinizione iterativa dei requisiti normativi[cite: 4, 5]. Per l'impiantistica, il valore dell'agile emerge in tre contesti: il coordinamento multidisciplinare MEP (clash detection BIM continuo), il pre-commissioning progressivo per lotti funzionali nel retrofit, e la building automation (BAS/BMS), dove la logica è essenzialmente software[cite: 5].</p>
+    
+    <p><em>L'incertezza del sottosuolo urbano: il caso paradigmatico per l'agile nelle reti DH:</em> Le reti di teleriscaldamento si sviluppano prevalentemente nel sottosuolo urbano, in un ambiente caratterizzato da un livello di incertezza tecnica che rende strutturalmente inadeguato qualsiasi approccio puramente waterfall[cite: 5]. Le mappe dei sottoservizi esistenti - reti idriche, fognature, cavi elettrici, gasdotti, fibre ottiche - sono spesso incomplete, datate o semplicemente errate[cite: 5]. L'apertura degli scavi rivela regolarmente interferenze non mappate che richiedono deviazioni del tracciato, rilavorazioni e adeguamenti al progetto esecutivo approvato[cite: 5]. Questo fenomeno è documentato sistematicamente nella letteratura sui grandi progetti di infrastrutture lineari urbane[cite: 5]. Nel contesto specifico delle reti DH, l'interferenza con sottoservizi non mappati è stata identificata come uno dei principali driver di ritardo e costo nelle realizzazioni europee[cite: 5].</p>
+    
+    <p>La risposta operativa ottimale non è il waterfall classico - che tratterebbe ogni deviazione come una variante formale con iter approvativo - ma una pianificazione agile a sprint settimanali: ogni settimana il team di cantiere verifica le condizioni reali del fronte di scavo, aggiorna il look-ahead schedule per le successive 1-2 settimane e adatta il tracciato alle interferenze trovate, prima di procedere con il tratto successivo[cite: 5]. Nei sistemi CHP+DH, questa logica agile della rete di distribuzione contrasta nettamente con la natura waterfall della centrale CHP[cite: 5]. Il punto di interfaccia tra la centrale (waterfall) e la rete (agile) è il nodo critico del project management: richiede un PM ibrido che sappia gestire il piano rigido dell'impianto produttivo e la variabilità fluida della distribuzione, con meccanismi di coordinamento che prevengano i conflitti di scheduling tra le due logiche operative[cite: 4, 5].</p>
+
+    <p><strong>e) Confronto Sistematico: Waterfall e Agile nelle Dimensioni Chiave del PM Edilizio-Impiantistico</strong><br>
+    La Tabella 1 sintetizza il confronto nelle principali dimensioni operative[cite: 5].</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Aspetto</th>
+                <th>Waterfall - Edilizia</th>
+                <th>Agile - Edilizia</th>
+                <th>Waterfall - Impiantistica</th>
+                <th>Agile - Impiantistica</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Pianificazione</strong></td>
+                <td>Piano esecutivo completo prima dell'inizio cantiere; capitolato e computi metrici definitivi[cite: 5].</td>
+                <td>Look-ahead schedule per milestone; baseline aggiornata iterativamente[cite: 5].</td>
+                <td>Progetto impiantistico definitivo (PD) e piano di installazione completati prima dei lavori[cite: 5].</td>
+                <td>Progettazione esecutiva degli impianti affinata in cantiere, specialmente in retrofit e ristrutturazioni[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Gestione requisiti</strong></td>
+                <td>Requisiti edilizi fissati nel progetto esecutivo approvato; varianti formali richiedono iter autorizzativo[cite: 5].</td>
+                <td>Requisiti funzionali verificati per micro-aree completate; adattamenti prima della fase successiva[cite: 5].</td>
+                <td>Specifiche tecniche degli impianti (UNI, CEI, ASHRAE) definite upfront; deroghe documentate[cite: 5].</td>
+                <td>Specifiche impiantistiche affinate con il committente durante lo sviluppo, spec. per automazione e BAS[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Team e responsabilità</strong></td>
+                <td>Struttura funzionale: progettisti, DL, appaltatori e subappaltatori operano in sequenza con passaggi formali[cite: 5].</td>
+                <td>Team cross-funzionale con presenza contemporanea di progettisti, installatori e committente in cantiere[cite: 5].</td>
+                <td>Progettista impianti, installatori termici/elettrici e collaudatori operano sequenzialmente[cite: 5].</td>
+                <td>Coordinamento integrato tra discipline impiantistiche (MEP) con riunioni di coordinamento settimanali[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Controllo qualità</strong></td>
+                <td>Collaudo finale (collaudo statico, CPI, CEL) a completamento dei lavori; non conformità a correzione costosa[cite: 5].</td>
+                <td>Test funzionali per aree completate; snag list aggiornata a ogni sprint; difetti corretti prima del montaggio successivo[cite: 5].</td>
+                <td>Collaudi impiantistici a fine lavori (tenuta idraulica, messa in servizio, CRE); difetti in garanzia[cite: 5].</td>
+                <td>Pre-commissioning progressivo per sottosistemi completati; avvio impianti per lotti funzionali[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Gestione delle varianti</strong></td>
+                <td>Varianti gestite tramite perizie di variante con iter approvativo; costi sempre significativi[cite: 5].</td>
+                <td>Varianti assorbite nelle iterazioni successive se entro la milestone; impatto limitato sullo schedule[cite: 5].</td>
+                <td>Varianti impiantistiche (modifiche percorsi, potenze, apparecchiature) documentate con as-built progressivi[cite: 5].</td>
+                <td>Variazioni di layout o specifiche integrate prima del passaggio alla fase successiva di installazione[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Documentazione e Contesto ottimale</strong></td>
+                <td>Nuova costruzione con progetto esecutivo maturo, committente pubblico, contratto a corpo[cite: 5]. Tavole esecutive, computi, PSC, POS, FIR obbligatori per legge; alto grado di formalizzazione[cite: 5].</td>
+                <td>Documentazione funzionale prodotta a ogni milestone; as-built aggiornati incrementalmente[cite: 5]. Retrofit complesso su edificio esistente, committente con esigenze evolutive[cite: 5].</td>
+                <td>Schemi P&ID, certificazioni CEI/UNI, dichiarazioni di conformità DM 37/2008, libretti impianto[cite: 5]. Impianto di nuova costruzione con layout fisso, norme vincolanti[cite: 5].</td>
+                <td>Documentazione prodotta per lotti completati; commissioning report progressivi per impianti avviati[cite: 5]. Retrofit impiantistico, building automation, riqualificazione energetica[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Integrazione TES (CHP+DH)</strong></td>
+                <td>Dimensionamento fisso basato su picchi storici di domanda termica; volume TES definito upfront nel progetto impiantistico[cite: 5].</td>
+                <td>Ottimizzazione dinamica tramite Model Predictive Control (MPC): capacità e strategia di carica/scarica affinate iterativamente in esercizio[cite: 5].</td>
+                <td>Schema di accumulo e P&ID completi prima dell'appalto; collaudo funzionale a fine installazione[cite: 5].</td>
+                <td>Commissioning TES per lotti; taratura MPC in corso di esercizio con dati reali di domanda[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Sviluppo Rete DH (sottosuolo urbano)</strong></td>
+                <td>Tracciato rigido approvato nella progettazione esecutiva; varianti al tracciato gestite come perizie formali, costose e vincolanti[cite: 5].</td>
+                <td>Sviluppo per lotti settimanali; adattamento dinamico alle interferenze con sottoservizi urbani scoperte in corso di scavo; look-ahead planning[cite: 4, 5].</td>
+                <td>Percorsi principali (dorsale DH) pianificati upfront con coibentazione certificata e giunzioni collaudate[cite: 5].</td>
+                <td>Percorsi secondari e allacciamenti adattati in cantiere; as-built aggiornati per tratto completato[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Rischio di interfaccia CHP/DH</strong></td>
+                <td>Confine centrale (waterfall) vs rete (agile) gestito come milestone formale; i ritardi della rete bloccano l'avvio della centrale[cite: 5].</td>
+                <td>Gestione iterativa del confine: la centrale CHP può essere avviata in isola termica (con TES come buffer) prima del completamento della rete DH[cite: 5].</td>
+                <td>Il TES funge da disaccoppiatore fisico tra impianto produttivo e distribuzione: consente testing indipendente delle due parti[cite: 5].</td>
+                <td>Commissioning separato CHP e rete DH; il TES consente l'avvio progressivo della rete lotto per lotto[cite: 5].</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p style="font-size: 11px; font-style: italic;">Elaborazione da Thesing et al. (2021)[cite: 3], Mohamed & Moselhi (2019)[cite: 4], Petersen et al. (2009)[cite: 2], Samaratova (2024)[cite: 1], Guelpa et al. (2021), Ross & Yan (2015).</p>
+
+    <p><br><strong>f. Il Ciclo di Vita del Progetto: Waterfall e Agile per Fasi</strong><br>
+    La Tabella 2 analizza come l'approccio metodologico si differenzia per fase del ciclo di vita del progetto[cite: 5]. Per i sistemi CHP+DH è stato aggiunto il percorso specifico della fase di commissioning, dove il TES svolge un ruolo abilitante per il test indipendente delle parti[cite: 5].</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fase del progetto</th>
+                <th>Edilizia - PM approach</th>
+                <th>Impiantistica MEP - PM approach</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Fattibilità e concept</strong></td>
+                <td>Studio di fattibilità, concept design, verifica normativa. Waterfall: fase gate formale. Approccio identico nei due modelli[cite: 5].</td>
+                <td>Studio di fattibilità, concept impiantistico (potenze, fluidi, layout macro). Schema di principio approvato prima del progetto esecutivo[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Progettazione preliminare</strong></td>
+                <td>W: progetto preliminare completo prima del definitivo. A: design workshop iterativi con il committente su opzioni alternative[cite: 5].</td>
+                <td>W: progetto di massima MEP con carichi termici, bilanciamento, layout schematico. A: possibilità di affinare i carichi in base alle scelte architettoniche iterate[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Progettazione definitiva ed esecutiva</strong></td>
+                <td>W: tavole esecutive complete, computi, PSC prima dell'appalto. A: livello di dettaglio sufficiente per la milestone, completato iterativamente[cite: 5].</td>
+                <td>W: schemi P&ID, tavole di installazione, specifiche tecniche complete per l'appalto. A: schemi dettagliati prodotti per lotti funzionali, con as-built progressivi[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Appalto e contratto</strong></td>
+                <td>Entrambi: contratto di appalto stipulato. W: a corpo con prezzi fissi. A: a misura o contratto aperto con variazioni controllate[cite: 5].</td>
+                <td>Entrambi: contratto con impresa installatrice. W: preferibilmente a corpo. A: a misura con bill of quantities aggiornato[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Esecuzione lavori</strong></td>
+                <td>W: esecuzione sequenziale per fasi. A: esecuzione per micro-aree o milestone con feedback periodici committente/DL/impresa[cite: 5].</td>
+                <td>W: installazione sequenziale (strutture portanti &rarr; distribuzione principale &rarr; terminali &rarr; controllo). A: installazione per lotti funzionali con pre-commissioning progressivo[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Collaudi e messa in servizio</strong></td>
+                <td>W: collaudo finale integrato (CPI, CRE, CEL). A: collaudi parziali per aree completate, snag list gestita iterativamente[cite: 5].</td>
+                <td>W: messa in servizio unica a completamento. A: avvio progressivo per sottosistemi; commissioning report per lotti; taratura automatismi in corso di esercizio[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Commissioning CHP+DH+TES</strong></td>
+                <td>Commissioning unitario a completamento totale (waterfall). Rischio: ritardi rete DH bloccano l'avvio della centrale[cite: 5].</td>
+                <td>W: messa in servizio unica. A: avvio CHP in isola termica con TES como buffer; commissioning rete DH lotto per lotto; taratura MPC iterativa[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Gestione documentale e as-built</strong></td>
+                <td>W: as-built prodotti a fine cantiere. A: as-built aggiornati a ogni milestone; modello BIM condiviso aggiornato incrementalmente[cite: 5].</td>
+                <td>W: libretti impianto e dichiarazioni di conformità a fine lavori. A: documentazione tecnica prodotta per lotti; manuale di manutenzione aggiornato progressivamente[cite: 5].</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p style="font-size: 11px; font-style: italic;">Elaborazione da Mohamed & Moselhi (2019)[cite: 4], Samaratova (2024)[cite: 1], Petersen et al. (2009)[cite: 2], Guelpa et al. (2021).</p>
+
+    <p><br><strong>g. Verso un Approccio Ibrido: il Modello Razionale per Progetti Complessi</strong><br>
+    Thesing et al. (2021) propongono il concetto di hybrid approach: la struttura complessiva rimane waterfall (piano, milestone, documentazione formale), mentre specifici sottoprogetti vengono gestiti con metodi agile[cite: 3, 5]. Samaratova (2024) osserva che questa ibridazione è già in atto: "un progetto può iniziare con il waterfall per le fasi iniziali di pianificazione e raccolta dei requisiti, per poi introdurre pratiche agile nelle fasi di esecuzione"[cite: 1, 5]. Mohamed e Moselhi (2019) quantificano i benefici attesi: riduzione delle interferenze tra lavorazioni, riduzione del numero di varianti progettuali, miglioramento della predictability per milestone, riduzione del contenzioso[cite: 4, 5]. L'elemento abilitante chiave è la disponibilità di dati in tempo reale che trasforma le riunioni di coordinamento da reporting retrospettivo in decision making anticipativo[cite: 4, 5].</p>
+    
+    <p><strong>h. Il TES come Abilitatore Gestionale: Disaccoppiamento e Flessibilità</strong><br>
+    Il TES non è solo un componente tecnico: è un abilitatore del project management ibrido[cite: 5]. La presenza di un sistema di accumulo termico modifica profondamente le possibilità di project management nei sistemi CHP+DH[cite: 5]. Il principio fondamentale è il disaccoppiamento temporale tra produzione e consumo: la centrale CHP può produrre calore quando è tecnicamente ottimale (massima efficienza, tariffe elettriche favorevoli, condizioni ambientali), indipendentemente dal profilo istantaneo della domanda termica delle utenze[cite: 5]. Questo disaccoppiamento fisico si traduce in flessibilità gestionale nelle fasi di costruzione e commissioning[cite: 5].</p>
+    
+    <p>Dal punto di vista del project management, il TES abilita una strategia che sarebbe impossibile in un sistema CHP-only: il commissioning indipendente della centrale CHP e della rete DH[cite: 5]. In un sistema senza accumulo, l'avvio della centrale richiede che la rete di distribuzione sia completamente realizzata e funzionale - un vincolo rigidamente waterfall che subordina l'attivazione dell'impianto al completamento dell'infrastruttura[cite: 5]. Con il TES, la centrale può essere avviata, testata e ottimizzata in isola termica (calore prodotto &rarr; accumulato &rarr; non distribuito), consentendo il completamento della rete DH per lotti funzionali successivi[cite: 5].</p>
+    
+    <p>Questa capacità di commissioning indipendente è particolarmente rilevante nei contesti di PPP a concessione (§ 1.2), dove il privato gestore è incentivato a ottimizzare il ciclo di vita dell'impianto su orizzonti trentennali[cite: 5]. Avviare la centrale il prima possibile anche con la rete DH ancora incompleta accelera il rientro dall'investimento e consente di raccogliere dati reali di esercizio per la calibrazione del Digital Twin, che a sua volta migliora le prestazioni dell'MPC del TES[cite: 5]. Verrilli et al. (2017) dimostrano la robustezza degli algoritmi MPC per impianti TES in reti DH anche in presenza di incertezza sulle previsioni di domanda termica - una proprietà particolarmente utile nelle fasi iniziali di esercizio quando i dati storici sono limitati[cite: 5].</p>
+
+    <h3>1.2 Quadri Contrattuali a Confronto - Appalti Pubblici e PPP</h3>
+    
+    <p><strong>a. Introduzione alla Governance delle infrastrutture</strong><br>
+    La scelta del modello di approvvigionamento per la realizzazione di infrastrutture pubbliche non è una mera decisione finanziaria, ma una scelta di governance che determina la distribuzione di responsabilità e incentivi tra settore pubblico e privato[cite: 5]. Come evidenziato da Grimsey e Lewis (2007), il panorama si è evoluto da strutture di "comando e controllo" verso relazioni più complesse che sfumano i confini tra pubblico e privato[cite: 5]. Mentre l'appalto tradizionale si focalizza sulla fornitura di un asset fisico, il PPP è orientato alla fornitura di un servizio lungo l'intero ciclo di vita dell'opera[cite: 5].</p>
+    
+    <p><strong>b. Prospettive Teoriche: Il PPP come "Gioco Sociale"</strong><br>
+    Scharle (2002) definisce il partenariato come un "gioco sociale" basato su interessi contrapposti e mutua dipendenza[cite: 5]. L'interpretazione neo-liberale vede il PPP come strumento per migliorare la performance governativa attraverso la produttività del mercato[cite: 5]. Il successo di tale "gioco" dipende dalla capacità del settore pubblico di passare da un ruolo di "costruttore" a quello di "regolatore intelligente"[cite: 5].</p>
+    
+    <p><strong>c. Definizioni e Filosofie di Approccio</strong><br>
+    L'Appalto Pubblico Tradizionale (PUB) rappresenta l'approccio classico in cui il settore pubblico mantiene il controllo quasi totale sulla progettazione, il finanziamento e la gestione dell'opera[cite: 5]. Il Partenariato Pubblico-Privato (PPP) emerge come modello cooperativo a lungo termine[cite: 5]. Come evidenziato da Ross e Yan (2015), il PPP non è solo un metodo di finanziamento alternativo, ma un'architettura contrattuale volta a massimizzare l'efficienza attraverso il coinvolgimento del privato nelle fasi di progettazione, costruzione, gestione e manutenzione (DBFM)[cite: 5].</p>
+    
+    <p><strong>d. Analisi Comparativa: Efficienza vs Flessibilità</strong><br>
+    <em>Efficienza e Innovazione:</em> Negli schemi PPP, il partner privato è incentivato a investire in innovazione e manutenzione preventiva poiché detiene i diritti sui profitti operativi (Ross & Yan, 2015)[cite: 5].<br>
+    <em>Flessibilità e Rinegoziazione:</em> I contratti PPP, essendo a lungo termine (25-30 anni), rendono le modifiche estremamente costose a causa delle rigide clausole di rinegoziazione necessarie per proteggere i finanziatori privati[cite: 5].</p>
+    
+    <p><strong>e. Il Trasferimento del Rischio e il Value for Money (VFM)</strong><br>
+    La distinzione fondamentale tra i due modelli risiede nell'allocazione del rischio[cite: 5]. Nel PPP il rischio viene trasferito alla parte che è meglio in grado di gestirlo[cite: 5]. La scelta tra i due modelli è guidata dal Value for Money (VFM): un progetto viene realizzato in PPP solo se il valore generato supera i maggiori costi di finanziamento privato rispetto al debito pubblico (Grimsey & Lewis, 2007)[cite: 5].</p>
+    
+    <p><strong>f. La Concessione di Servizio nel Teleriscaldamento: Revenue Risk e Incentivi alla Qualità del PM</strong><br>
+    Il PPP applicato al teleriscaldamento ha una specificità contrattuale fondamentale: la Concessione di Servizio con trasferimento del rischio di domanda[cite: 5]. Nei modelli PPP applicati alle reti di teleriscaldamento, il quadro contrattuale prevalente non è il semplice appalto di costruzione (Design-Build), ma la concessione di servizio a lungo termine (Design-Build-Finance-Operate-Transfer, DBFOT, o analoghe strutture), in cui il concessionario privato non solo costruisce l'infrastruttura ma la gestisce per periodi tipicamente compresi tra 20 e 30 anni, con remunerazione attraverso le tariffe sul calore venduto alle utenze[cite: 5].</p>
+    
+    <p>La distinzione fondamentale rispetto al PPP standard è il trasferimento del rischio di domanda (demand risk): il concessionario non è remunerato da canoni pubblici fissi, ma dai ricavi generati dalle vendite di calore[cite: 5]. Se la domanda termica delle utenze non raggiunge i volumi previsti - per variazioni climatiche, efficientamento degli edifici serviti, perdita di utenti - il concessionario sopporta direttamente il danno economico, senza che la pubblica amministrazione intervenga a coprire il disavanzo, salvo specifici meccanismi di revenue guarantee minimi previsti contrattualmente[cite: 5].</p>
+    
+    <p>Il caso del comune di Rozzano (2021) è esemplificativo del modello italiano: la municipality ha affidato in concessione l'estensione, la riqualificazione e la gestione della rete di teleriscaldamento attraverso un project financing, con il concessionario che assume il rischio operativo e di domanda per l'intera durata della concessione[cite: 5]. Ross e Yan (2015) dimostrano che in tali schemi il partner privato è incentivato a investire in innovazione e manutenzione preventiva poiché detiene i diritti sui profitti operativi, creando un allineamento di interessi che l'appalto tradizionale non garantisce[cite: 5].</p>
+    
+    <p>Questa struttura contrattuale ha implicazioni dirette sul project management: un concessionario che gestirà l'impianto per 30 anni con rischio di domanda proprio è molto più propenso a adottare approcci agile/ibridi nella fase di installazione per garantire che la manutenzione futura (Life Cycle Management) sia ottimizzata[cite: 5]. L'incentivo economico alla qualità costruttiva e all'efficienza operativa è strutturalmente incorporato nel contratto di concessione, a differenza dell'appalto tradizionale dove il costruttore non ha interessi post-consegna[cite: 5]. Ciò crea una connessione diretta tra il modello contrattuale PPP/concessione e la propensione all'approccio ibrido nel PM, che la presente ricerca intende analizzare sistematicamente attraverso la matrice tassonomica presentata in § 1.3[cite: 5].</p>
+
+    <p><strong>g. Sintesi delle Differenze Principali</strong><br>
+    La Tabella 3 mostra il confronto sintetico dei due modelli di procurement[cite: 5].</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Caratteristica</th>
+                <th>Appalto pubblico (PUB)</th>
+                <th>Partenariato Pubblico-Privato (PPP)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Finanziamento</strong></td>
+                <td>Interamente pubblico[cite: 5].</td>
+                <td>Prevalentemente privato (Equity + Debito)[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Integrazione</strong></td>
+                <td>Fasi separate (progettazione vs costruzione)[cite: 5].</td>
+                <td>Approccio integrato (Whole-of-life, DBFOT)[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Allocazione del rischio</strong></td>
+                <td>Trattenuto in larga parte dal Pubblico[cite: 5].</td>
+                <td>Trasferito al Privato (costruzione, gestione)[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Rischio di domanda (DH)</strong></td>
+                <td>Pubblico copre shortfall di domanda termica[cite: 5].</td>
+                <td>Privato porta il rischio di demand shortfall; possibili MRG contrattuali[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Obiettivo Principale</strong></td>
+                <td>Rispetto del budget iniziale e delle norme[cite: 5].</td>
+                <td>Efficienza del ciclo di vita e performance[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Orizzonte temporale</strong></td>
+                <td>Breve-medio termine (fine cantiere)[cite: 5].</td>
+                <td>Lungo termine (fino a 30 anni)[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>Incentivo a qualità PM</strong></td>
+                <td>Limitato: il costruttore non ha interessi post-consegna[cite: 5].</td>
+                <td>Alto: il concessionario ottimizza la costruzione per ridurre i costi O&M futuri[cite: 5].</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p style="font-size: 11px; font-style: italic;">Elaborazione da Grimsey & Lewis (2007)[cite: 5], Scharle (2002), Ross & Yan (2015), Castelblanco et al. (2025).</p>
+
+    <p><br><strong>h. Conclusioni della Sezione 1.2</strong><br>
+    L'appalto tradizionale rimane preferibile per progetti con bassa incertezza e necessità di alta flessibilità politica, mentre il PPP si dimostra superiore in termini di sostenibilità economica e manutentiva per infrastrutture complesse[cite: 5]. Il successo del PPP, come suggerito da Scharle (2002), dipende criticamente dalla capacità del settore pubblico di agire come un "regolatore intelligente" in un gioco sociale complesso[cite: 5]. Nel caso specifico del teleriscaldamento con cogenerazione, la concessione di servizio a lungo termine con trasferimento del rischio di domanda al concessionario privato crea un allineamento strutturale di incentivi verso l'approccio ibrido nel PM: il privato che porta il rischio di domanda per 30 anni ha tutto l'interesse a costruire bene (riducendo i costi O&M futuri), a commissionare progressivamente (riducendo i tempi di avvio del servizio), e a investire nel Digital Twin del TES (massimizzando i ricavi da arbitraggio termico)[cite: 5].</p>
+
+    <h3>1.3 Preview Metodologica: La Matrice Tassonomica PM - Procurement</h3>
+    <p><em>Ipotesi fondante della ricerca e struttura della tassonomia:</em> La letteratura analizzata nelle sezioni 1.1 e 1.2 converge verso una conclusione: i sistemi complessi come la cogenerazione con teleriscaldamento e accumuli termici (CHP+DH+TES) richiedono configurazioni contrattuali e gestionali specifiche per superare il trade-off tra rigidezza normativa e variabilità operativa[cite: 5]. Il modello di PM non può essere scelto indipendentemente dal modello di procurement, né il modello di procurement può essere ottimizzato senza considerare le implicazioni sul PM[cite: 5].</p>
+    
+    <p>La presente ricerca utilizzerà i parametri PM (Waterfall / Agile / Hybrid) e Procurement (PUB: Appalto Pubblico Tradizionale / PPP: Partenariato con Concessione di Servizio) come assi di una matrice tassonomica bidimensionale[cite: 5]. Tale matrice è presentata di seguito come framework preliminare, che sarà validato e affinato attraverso la literature review sistematica nei capitoli successivi[cite: 5].</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Procurement / PM</th>
+                <th>WATERFALL PM (Piano fisso, milestone formali)</th>
+                <th>HYBRID PM (Waterfall struttura + Agile esecuzione)</th>
+                <th>AGILE PM (Iterativo, sprint, feedback continuo)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>PUB (Appalto Pubblico Tradizionale)</strong></td>
+                <td><strong>Cella A / PUB+Waterfall</strong><br>Configurazione classica: nuova costruzione CHP con progetto esecutivo maturo, contratto a corpo, committente pubblico. Bassa flessibilità, alta prevedibilità. Ottimale se lo scope è stabile[cite: 5].</td>
+                <td><strong>Cella B / PUB+Hybrid</strong><br>Appalto pubblico per CHP con gestione agile della rete DH. Contratto a misura con BQ aggiornabile. Richiede un PM con doppia competenza e DL agile-aware[cite: 5].</td>
+                <td><strong>Cella C / PUB+Agile</strong><br>Raramente applicabile per CHP: i vincoli normativi (D.Lgs. 36/2023) e il contratto a corpo rendono l'agile puro incompatibile con il framework pubblico. Possibile solo per sotto-sistemi software (BAS/MPC)[cite: 5].</td>
+            </tr>
+            <tr>
+                <td><strong>PPP (Concessione di Servizio 20-30 anni)</strong></td>
+                <td><strong>Cella D / PPP + Waterfall</strong><br>Configurazione rigida: il concessionario costruisce e gestisce secondo specifiche fisse. Riduce i benefici del PPP (innovazione, ottimizzazione ciclo di vita). Storicamente frequente nelle prime generazioni di DH[cite: 5].</td>
+                <td><strong>Cella E / PPP+Hybrid</strong><br><strong>OTTIMALE per CHP+DH+TES:</strong> la struttura contrattuale PPP incentiva il concessionario all'ottimizzazione del ciclo di vita; l'approccio ibrido consente centrale waterfall + rete agile + commissioning TES iterativo. Il Digital Twin diventa asset gestionale[cite: 5].</td>
+                <td><strong>Cella F / PPP+Agile</strong><br>Concessione con alta flessibilità operativa: possibile in PPP per soli sistemi DH di distribuzione (senza CHP), dove la natura lineare del network urbano richiede adattamenti continui. Il revenue risk già incorporato incentiva la reattività[cite: 5].</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p><br>Questa matrice costituisce il framework analitico della ricerca[cite: 5]. Nei capitoli successivi, i casi studio e i paper analizzati saranno classificati all'interno di questa matrice, consentendo di rispondere alla domanda di ricerca principale: esiste una configurazione PM x Procurement sistematicamente associata a migliori outcome nei progetti CHP+DH+TES, e se sì, quali sono i fattori contestuali che ne determinano l'applicabilità?[cite: 5]</p>
+
+    <h1>2. RISULTATI E ANALISI DELLA LETTERATURA</h1>
+    
+    <p>Questo capitolo raccoglie, analizza e sistematizza i contributi della letteratura scientifica selezionati per ridefinire la governance dei sistemi di teleriscaldamento (District Heating - DH), cogenerazione (Combined Heat and Power - CHP) e accumulo termico (Thermal Energy Storage - TES)[cite: 5]. Ciascun contributo viene esaminato attraverso una doppia lente: la caratterizzazione tecnica dell'infrastruttura e l'inquadramento gestionale all'interno della matrice bidimensionale Project Management (Waterfall vs. Agile/Hybrid) x Procurement (Traditional/PUB vs. PPP/Privato)[cite: 5]. L'obiettivo fondamentale è mappare come la complessità tecnologica e la necessità di flessibilità operativa influenzino e guidino le scelte di governance, allocazione del risco e coordinamento multi-attore[cite: 5].</p>
+
+    <h2>2.1 Analisi Sistematica dei Casi Studio</h2>
+    
+    <h3>2.1.1 Ghafghazi et al. (2010) - Il Caso Vancouver</h3>
+    <p>Il paper propone un approccio multicriterio per la valutazione di diverse opzioni energetiche in sistemi di teleriscaldamento, applicato a un caso studio reale nella città di Vancouver[cite: 5]. Il sistema di teleriscaldamento analizzato nel caso studio di Vancouver si inserisce in una strategia urbana orientata alla riduzione delle emissioni e alla valorizzazione di fonti energetiche locali e a basso impatto[cite: 5]. Si tratta di una rete di district heating progettata per servire edifici residenziali e commerciali attraverso una distribuzione centralizzata di calore, con l'obiettivo di sostituire sistemi individuali a combustibili fossili[cite: 5].</p>
+    
+    <p>Una caratteristica distintiva del sistema è l'integrazione di fonti di calore non convenzionali, in particolare il recupero di energia termica da reflui urbani (wastewater heat recovery), affiancato da alternative come biomassa, gas naturale e geotermia[cite: 5]. Il calore viene raccolto, eventualmente "upgradato" tramite pompe di calore, e distribuito tramite una rete idraulica a temperatura controllata verso gli utenti finali[cite: 5].</p>
+    
+    <p>L'obiettivo del paper è confrontare diverse fonti energetiche (gas naturale, biomassa, calore da reflui e geotermia) considerando criteri multipli, tra cui costi, emissioni di gas serra, particolato, maturità tecnologica e disponibilità locale[cite: 5]. Per la valutazione viene utilizzato il metodo PROMETHEE, che consente di integrare variabili quantitative e qualitative e di includere le preferenze di diversi stakeholder[cite: 5]. L'analisi evidenzia come, in assenza di comunicazione tra gli attori coinvolti, le preferenze divergano significativamente, portando a scelte non condivise[cite: 5]. Al contrario, scenari con maggiore trasparenza e dialogo portano a una convergenza delle decisioni e a un consenso sulle alternative migliori[cite: 5]. Il lavoro dimostra quindi che il processo decisionale nei sistemi energetici non dipende solo da parametri tecnici ed economici, ma anche da dinamiche sociali e comunicative tra stakeholder[cite: 5].</p>
+    
+    <p>Il paper si colloca prevalentemente in un quadrante vicino a un approccio collaborativo e flessibile, assimilabile a una combinazione tra Agile in construction e modelli di Public-Private Partnership (PPP)[cite: 5]. Questo perché l'analisi evidenzia l'importanza del coinvolgimento attivo degli stakeholder, della comunicazione iterativa e della convergenza progressiva delle decisioni, elementi tipici di approcci Agile[cite: 5]. Allo stesso tempo, la presenza di molteplici attori con interessi differenti (pubblici e privati) richiama le logiche di governance condivisa proprie dei PPP[cite: 5]. Il processo decisionale non è lineare né rigidamente sequenziale, ma evolve attraverso interazioni continue, rendendo meno adatto un modello waterfall o un appalto tradizionale[cite: 5].</p>
+
+    <h3>2.1.2 Gultekin-Bicer et al. (2018) - Advanced Energy Retrofit</h3>
+    <p>Il paper analizza progetti di retrofit energetico avanzato attraverso il confronto tra diversi approcci di progettazione e gestione, evidenziando come modelli collaborativi e integrati influenzino significativamente le prestazioni energetiche[cite: 5]. L'analisi si inserisce nel focus della ricerca sul project management, in particolare nel confronto tra approcci sequenziali e iterativi e tra modelli di procurement[cite: 5].</p>
+    
+    <p>Il paper analizza tre casi studio reali di retrofit energetico negli Stati Uniti, tra cui l'Energy Innovation Center (EIC), un edificio dimostrativo progettato per massimizzare efficienza energetica e integrazione tecnologica[cite: 5]. Il progetto ha raggiunto una riduzione dei consumi fino al 53% rispetto al baseline ASHRAE, grazie a un approccio integrato che combina interventi su involucro, HVAC, sistemi di controllo e tecnologie avanzate come pompe di calore geotermiche e sistemi di demand-side management[cite: 5]. Il paper dimostra che approcci di project management integrati e iterativi (Agile/Design-Build) migliorano significativamente le prestazioni energetiche rispetto ai modelli tradizionali (waterfall/Design-Bid-Build)[cite: 5]. La progettazione collaborativa e l'uso continuo di simulazioni consentono ottimizzazioni più efficaci, rendendo il project management una leva chiave per la decarbonizzazione[cite: 5].</p>
+    
+    <p>Il paper si colloca prevalentemente nel quadrante Agile/Integrated - Design-Build (DB), pur includendo anche casi più tradizionali assimilabili al waterfall + DBB[cite: 5]. I progetti di deep retrofit analizzati adottano un approccio iterativo e collaborativo, caratterizzato da modellazione energetica continua, benchmarking condiviso e decision-making integrato, elementi tipici di una logica Agile[cite: 5]. Dal punto di vista del procurement, emerge l'uso di Design-Build, che favorisce l'integrazione tra progettazione e costruzione e consente feedback continui su costi e prestazioni[cite: 5]. Al contrario, i retrofit tradizionali seguono logiche più sequenziali, con obiettivi di costo prioritari e minore integrazione, avvicinandosi al modello waterfall[cite: 5].</p>
+
+    <h3>2.1.3 Wang et al. (2019) - Il Caso ZK City</h3>
+    <p>Il paper analizza l'applicazione dei partenariati pubblico-privati (PPP) nella gestione del teleriscaldamento a carbone pulito, con l'obiettivo di valutarne l'efficacia come soluzione "value for money" (VfM)[cite: 5]. A tal fine, viene sviluppato un framework di valutazione basato su tre dimensioni della sostenibilità: economica, sociale e ambientale, applicato a un caso studio[cite: 5]. I risultati evidenziano che il modello PPP garantisce buone prestazioni complessive, pur presentando margini di miglioramento, in particolare nel coinvolgimento degli utenti[cite: 5]. Il lavoro contribuisce alla letteratura fornendo uno strumento strutturato per supportare le decisioni delle autorità pubbliche e migliorare la sostenibilità operativa[cite: 5].</p>
+    
+    <p>Il paper parla di un progetto di teleriscaldamento di ZK City che rappresenta un caso di riqualificazione su larga scala di un sistema esistente inefficiente, realizzato tramite modello Public-Private Partnership[cite: 5]. L'intervento, del valore di circa 415 milioni RMB, ha previsto l'ammodernamento tecnologico di una rete a carbone introducendo soluzioni "clean coal", oltre alla gestione operativa fino al 2041[cite: 5]. Il sistema serve circa 6 milioni m² di utenze residenziali[cite: 5]. Un veicolo societario (SPV) è responsabile di finanziamento, retrofit e gestione per 25 anni[cite: 5]. La valutazione delle prestazioni combina dati quantitativi e giudizi esperti, utilizzando un modello fuzzy per analizzare il Value for Money (VfM) su criteri economici, ambientali e sociali[cite: 5].</p>
+    
+    <p>Il progetto si colloca nel quadrante PPP con approccio gestionale semi-adattivo (vicino ad Agile)[cite: 5]. Il procurement PPP abilita efficienza e innovazione, mentre la gestione operativa mostra elementi iterativi e miglioramento continuo[cite: 5]. Tuttavia, l'attenzione limitata agli utenti indica una parziale transizione da modelli tradizionali verso approcci pienamente integrati[cite: 5].</p>
+
+    <h3>2.1.4 Bahadori et al. (2025) - Modernizzazione Strategica delle Reti DH</h3>
+    <p>Il paper interpreta la modernizzazione delle reti di teleriscaldamento come un problema strategico e organizzativo oltre che tecnico[cite: 5]. L'attenzione a stakeholder engagement, strumenti decisionali, retrofit graduali e coordinamento multi-attore lo rende particolarmente rilevante per l'analisi di project management e procurement nei sistemi CHP+TES+DH[cite: 5].</p>
+    
+    <p>Il paper analizza diversi casi reali di modernizzazione di reti DH in Europa e Nord America[cite: 5]. In Danimarca, retrofit verso low-temperature district heating e integrazione di fonti rinnovabili hanno consentito riduzioni di CO2 tra il 70% e il 90%[cite: 5]. In Svizzera, città come Zurigo, Losanna e Basilea stanno convertendo reti storiche ad alta temperatura (&gt;100°C) introducendo smart metering, sottostazioni ottimizzate e accumuli TES per migliorare l'efficienza e l'integrazione di fonti rinnovabili[cite: 5]. Vancouver viene citata per il recupero di 6,6 MW di calore da reflui urbani[cite: 5]. Il paper collega questi interventi alla necessità di modelli decisionali collaborativi, pianificazione progressiva e governance multi-stakeholder[cite: 5].</p>
+    
+    <p>Il framework descritto nel paper si colloca prevalentemente nel quadrante PPP + approccio Agile/ibrido[cite: 5]. La presenza di retrofit progressivi, forte coinvolgimento degli stakeholder, utilizzo di strumenti decisionali iterativi e necessità di adattamento alle condizioni locali richiama logiche Agile in construction, basate su feedback continui e pianificazione incrementale[cite: 5]. Parallelamente, la natura infrastrutturale delle reti DH, gli elevati CAPEX iniziali, la lunga durata degli investimenti e il coinvolgimento simultaneo di utility, municipalità e operatori energetici rendono il PPP particolarmente coerente[cite: 5]. Il paper enfatizza infatti governance collaborativa, condivisione del rischio e coordinamento tra soggetti pubblici e privati come elementi chiave della modernizzazione energetica[cite: 5].</p>
+    
+    <p>Il caso si posiziona principalmente nel quadrante PPP-Agile/Hybrid[cite: 5]. Le reti DH moderne richiedono infatti retrofit modulari, gestione adattiva, integrazione progressiva di TES e rinnovabili, oltre a un forte coordinamento istituzionale[cite: 5]. Rimangono comunque presenti elementi waterfall nelle grandi opere civili e nella pianificazione infrastrutturale di lungo periodo[cite: 5].</p>
+
+    <h3>2.1.5 Mogerman (2012) - Lifecycle Approach nel District Energy Canadese</h3>
+    <p>La tesi di Mogerman rappresenta il contributo più diretto disponibile in letteratura alla domanda di ricerca: sviluppa un decision support tool esplicito per la selezione della strategia di consegna e contrattualizzazione (PDCS) nei progetti di district energy, affrontando contemporaneamente la dimensione del project management e quella del procurement lungo l'intero ciclo di vita del sistema[cite: 5]. Il paper analizza sette casi studio canadesi di district energy (DE)[cite: 5].</p>
+    
+    <ul>
+        <li><strong>Il primo progetto</strong> comprende un sistema di teleriscaldamento da oltre 60 MW termici progettato per avere una durata di 40 anni e alimentato a gas naturale con integrazione biomassa per cogenerazione Combined Heat Power[cite: 5]. Il sistema prevede inoltre una futura capacità di accumulo termico ed elettrico (TES+storage)[cite: 5]. Il costo stimato è 85 milioni con 7 fasi su 3,5 anni, costruito in maniera multifase tramite contratti separati (Multiple Design-Bid-Build)[cite: 5]. Ogni fase viene appaltata separatamente; fonti energetiche alternative vengono aggiunte iterativamente al sistema base[cite: 5]. La struttura CHP in aggiunta al futuro TES e il modello di consegna multi-fase rappresentano esattamente il profilo di sistema analizzato dalla ricerca[cite: 5]. L'approccio M-DBB con fasi sequenziali ma tecnologie alternative aggiunte iterativamente è un caso di PM ibrido applicato a un sistema DH+CHP in sviluppo progressivo[cite: 5].</li>
+        <li><strong>Il secondo progetto</strong> è un impianto da 10 MW termici (5MW da fonti rinnovabili - biomassa primaria, gas e backup), con 50 anni di vita utile con rebuild a 25 anni, senza accumulo termico integrato né cogenerazione elettrica[cite: 5]. Il costo è di 20,7 milioni di dollari, con fondi provinciali più federali[cite: 5]. La consegna prevede: i Construction Manager at Risk per l'involucro e l'infrastruttura di base; con Design-Build separato per l'impianto biomassa con specifiche prestazionali vincolanti e forte coinvolgimento del committente[cite: 5]. In questo progetto il contratto DB per la componente biomassa, con tight performance specs, è analogo a un approccio waterfall tecnico con gate di prestazione[cite: 5]. L'assenza di TES limita la pertinenza al focus, ma la dualità CRM+DB è un esempio di PM ibrido su sistema DH come fonte rinnovabile[cite: 5].</li>
+        <li><strong>Il terzo progetto</strong> è una rete di district heating municipale da 19,5 MW termici, con 30 anni di vita utile, alimentata principalmente da recupero calore di scarto (waste heat recovery) con backup a gas, con nessun accumulo integrato e nessuna cogenerazione elettrica[cite: 5]. Il costo è 31 milioni di dollari, con combinazione di mutuo FCM Green Municipal Fund + grant provinciale + debito (debenture)[cite: 5]. I pannelli solari termici sugli edifici alimentano il sistema in via supplementare[cite: 5]. Il caso è rilevante per la dimensione Waste Heat Recovery + District Heating senza TES: illustra una configurazione comune nelle prime generazioni di reti DH pubbliche, priva della flessibilità operativa che l'accumulo termico garantisce, il che rappresenta il punto di partenza rispetto al quale il TES costituisce un upgrade gestionale e tecnologico misurabile[cite: 5].</li>
+        <li><strong>Il quarto progetto</strong> è il sistema DH municipale di piccola taglia da 10 MW, con 25 anni di vita, interamente a gas naturale senza fonti rinnovabili, senza accumulo e senza cogenerazione[cite: 5]. Il costo è di 8 milioni finanziato da prestito a basso interesse (ME First program) + grant + borrowing[cite: 5]. Il progetto è il più semplice dei sette casi: con basso livello di innovazione tecnologica ed alta stabilità dei requisiti[cite: 5]. Questo caso rappresenta la cella A della matrice nella sua forma più pura: l'appalto pubblico tradizionale, con approccio waterfall e nessuna complessità tecnica che richieda adattamenti iterativi[cite: 5]. È il termine di confronto minimo della ricerca, il punto di baseline rispetto al quale misurare i benefici dell'approccio ibrido con TES[cite: 5].</li>
+        <li><strong>Il quinto caso</strong> rappresenta il sistema più grande dei casi studio con 100 MW di riscaldamento più raffreddamento più 20 MW di cogenerazione elettrica da gas naturale ("district energy mega-system"), originariamente costruito nel 1880, con major upgrade nel 1993 oggetto del caso[cite: 5]. Il sistema è ad alta temperatura con recupero dei cascami energetici dai processi principali[cite: 5]. La proprietà e gestione sono private, senza accumulo integrato[cite: 5]. La proprietà privata del mega-sistema senza un contratto di concessione formale lo avvicina alla cella D (PPP-like/privato più waterfall), più che alla A[cite: 5]. La cogenerazione CHP su larga scala è direttamente pertinente al focus; l'assenza di TES e la gestione dell'upgrade con approccio tradizionale lo rendono un caso storico di riferimento[cite: 5].</li>
+        <li><strong>Il sesto progetto</strong> è il sistema multi-servizio di medie dimensioni con 15 MW[cite: 5]. La tesi di Mogerman sviluppa un decision support tool esplicito per la selezione della strategia di consegna e contrattualizzazione (PDCS) nei progetti di district energy[cite: 5].</li>
+        <li><strong>Il settimo progetto</strong> è un sistema DH privato da 24 MW (10 MW da rinnovabili waste heat recovery primario, gas backup), senza accumulo integrato, con impianto temporaneo a gas per servire lo sviluppo durante la costruzione della centrale principale[cite: 5]. Finanziamento: grant Clean Energy Fund + BC Hydro + utility cost recovery[cite: 5]. È l'unico caso di committente privato (developer) tra i canadesi[cite: 5]. L'impianto temporaneo come soluzione di bridging durante la costruzione della centrale permanente è un meccanismo di disaccoppiamento analogo al ruolo del TES[cite: 5]. Il modello privato con cost recovery senza concessione formale si avvicina alla cella D (PPP+Waterfall): il privato porta il rischio di domanda ma senza un contratto di concessione strutturato a lungo termine[cite: 5].</li>
+    </ul>
+    
+    <p>La tesi di Mogerman è, complessivamente, un paper sulla cella B (PUB + Hybrid) come approccio emergente e raccomandato per i progetti DE canadesi, partendo da un panorama empirico dominato dalla cella A (PUB + Waterfall)[cite: 5]. I casi studio si distribuiscono prevalentemente nella cella A (CS3, CS4, CS6) e B (CS1, CS2), con due casi privati che si avvicinano alla cella D (CS5, CS7)[cite: 5]. L'assenza di casi PPP formali con concessione di servizio a lungo termine è in sé un risultato rilevante: nessuno dei progetti canadesi analizzati adotta il modello PPP/concessione standard[cite: 5].</p>
+    
+    <p>Il contributo principale di Mogerman - il PDCS decision support tool - sposta la riflessione dal singolo caso alla struttura decisionale sistematica, identificando 22 selection factors e 10 PDCS alternatives[cite: 5]. Questo framework metodologico è direttamente importabile nella matrice PM - Procurement della presente ricerca come strumento di validazione della classificazione tassonomica[cite: 5]. Il paper dimostra empiricamente che la scelta di PDCS nei progetti DH non segue una logica uniforme: la complessità tecnica del sistema (presenza di CHP, rinnovabili, potenziale TES), il tipo di committente (istituzione vs. municipalità vs. privato) e l'orizzonte del ciclo di vita (25-50 anni) sono i principali driver differenziatori[cite: 5]. Questa evidenza supporta l'ipotesi fondante della presente ricerca che non esiste una configurazione universalmente ottimale, ma una matrice di configurazioni contestualmente appropriate[cite: 5].</p>
+
+    <h3>2.1.6 Opportunities for the Development of PPP in Bulgaria (Sofia District Heating)</h3>
+    <p>Il progetto di ammodernamento del sistema di teleriscaldamento di Sofia rappresenta un caso emblematico per valutare l'intersezione tra modelli di finanziamento e rigidità gestionale[cite: 5]. L'analisi evidenzia come le promesse di efficienza e Value for Money dei modelli PPP si scontrino frequentemente con le criticità operative tipiche delle infrastrutture urbane[cite: 5].</p>
+    
+    <p>Dal punto di vista tecnico, l'iniziativa mirava all'efficientamento del District Heating cittadino con un budget di 150 milioni di euro (100 milioni privati e 50 milioni da fondi UE)[cite: 5]. Gli ambiziosi obiettivi di riduzione dei consumi (15%) e miglioramento dell'efficienza (20%) sono stati parzialmente raggiunti (rispettivamente 12% e 17%)[cite: 5]. Tuttavia, incrociando questi dati con il Project Management, emergono gravi criticità operative: il cantiere ha subito un ritardo di 10 mesi e un sovraccosto dell'8%[cite: 5]. Questi scostamenti, imputabili a problematiche infrastrutturali impreviste nel sottosuolo e a repentine variazioni normative, dimostrano la vulnerabilità di una pianificazione eccessivamente deterministica[cite: 5].</p>
+    
+    <p>All'interno della matrice di ricerca, il progetto si colloca indiscutibilmente nel dominio del Partenariato Pubblico-Privato (PPP) per quanto riguarda il procurement, data la strutturazione contrattuale e la massiccia iniezione di capitali privati[cite: 5]. Dal lato del Project Management, la gestione ha seguito una chiara impostazione Waterfall tradizionale[cite: 5]. Questo si evince dalla rigidità di base che non è riuscita ad assorbire le fluttuazioni dei costi energetici e le scoperte in corso d'opera[cite: 5]. L'incapacità di riadattare la timeline limitando i danni e i sovraccosti per modifiche in corso d'opera sono i sintomi evidenti di un approccio sequenziale, incapace di rispondere in logica Agile all'incertezza[cite: 5].</p>
+    
+    <p>In sintesi, il caso di Sofia occupa il quadrante <strong>PPP + Waterfall (Cella D)</strong>[cite: 5]. Esso illustra perfettamente il "costo della flessibilità mancata": un modello di approvvigionamento innovativo (PPP) le cui potenzialità vengono frenate da un framework di Project Management rigidamente sequenziale e poco reattivo agli imprevisti cantieristici[cite: 5].</p>
+
+    <h3>2.1.7 Fraunhofer IEG (Bochum, Germania) - Impianto Pilota HTHP e MTES</h3>
+    <p>Il caso studio del Fraunhofer IEG di Bochum evidenzia come progetti CHP/DH innovativi integrati con accumuli termici stagionali richiedano modelli di project management altamente coordinati e multidisciplinari[cite: 5]. La lunga fase di pianificazione, integrazione tecnologica e commissioning mostra una forte convergenza verso approcci ibridi tra waterfall e Agile in construction[cite: 5].</p>
+    
+    <p>Il progetto pilota sviluppato presso il Fraunhofer IEG di Bochum dimostra l'integrazione tra accumulo termico stagionale in miniere allagate (MTES), solare termico, pompe di calore ad alta temperatura (HTHP) e rete di teleriscaldamento urbana[cite: 5]. Il sistema raggiunge temperature di mandata pari a 120°C tramite una HTHP a cascata ad ammoniaca e butano, consentendo l'iniezione diretta nella rete DH e una riduzione stimata di 4800 tonnellate/anno di CO2[cite: 5]. Il progetto, sviluppato tra il 2018 e il 2023, ha richiesto fasi sequenziali di progettazione, tendering, costruzione e commissioning, ma anche continue attività iterative di testing, ottimizzazione operativa e integrazione multi-componente tipiche di infrastrutture R&D avanzate[cite: 5].</p>
+    
+    <p>Il progetto si colloca prevalentemente nel quadrante <strong>PPP/pubblico + approccio ibrido Agile-Waterfall</strong>[cite: 5]. Dal punto di vista procurement, il finanziamento pubblico europeo e nazionale (HeatStore, Interreg DGE-Rollout, BMWK) evidenzia una logica assimilabile a partenariati collaborativi multi-attore, con il coinvolgimento di enti di ricerca, utility e programmi istituzionali[cite: 5]. Sul lato project management, la struttura generale segue una logica waterfall tradizionale (pianificazione, tendering, costruzione e commissioning), necessaria per infrastrutture termiche complesse[cite: 5]. Tuttavia, la natura sperimentale dell'impianto, l'ottimizzazione continua della sorgente termica e la necessità di test iterativi introducono elementi tipici dell'Agile in construction e dell'ingegneria adattiva[cite: 5].</p>
+    
+    <p>Il caso Bochum si posiziona nel quadrante intermedio tra PPP pubblico e project management ibrido[cite: 5]. La governance è fortemente istituzionale e collaborativa, mentre l'esecuzione combina sequenzialità infrastrutturale tradizionale con attività iterative di testing, commissioning e ottimizzazione continua, caratteristiche tipiche dei progetti energetici dimostrativi e delle infrastrutture innovative CHP+TES+DH[cite: 5].</p>
+
+    <h2>2.2 La Matrice di Sintesi [PM - Procurement]</h2>
+    <p>La Tabella 5 sintetizza tassonomicamente il posizionamento dei contributi letterari e dei rispettivi casi studio analizzati[cite: 5]. La distribuzione evidenzia una chiara correlazione: all'aumentare della complessità tecnologica (introduzione di dinamiche CHP e flessibilità TES), i progetti tendono a migrare verso modelli di gestione flessibili o ibridi (colonne di destra)[cite: 5].</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Procurement / PM</th>
+                <th>WATERFALL (Sequenziale, predittivo, orientato ai gate contrattuali)</th>
+                <th>HYBRID (Macro-struttura sequenziale con cicli iterativi/tecnologici)</th>
+                <th>AGILE (Adattivo, flessibile, basato su feedback continui)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>TRADITIONAL PUB (Appalto Pubblico Tradizionale / Design-Bid-Build)</strong></td>
+                <td>
+                    <strong>Cella A / BASELINE:</strong><br>
+                    • Mogerman (2012) - CS3 (DH waste heat senza TES)[cite: 5]<br>
+                    • Mogerman (2012) - CS4 (DH piccolo a gas)[cite: 5]<br><br>
+                    <em>Identikit:</em> Requisiti stabili, tecnologie collaudate, assenza di variabilità termica. Focus esclusivo sul rispetto di tempi/costi iniziali[cite: 5].
+                </td>
+                <td>
+                    <strong>Cella B / L'Ingegneria Progressiva:</strong><br>
+                    • Mogerman (2012) - CS1 (DH+CHP+TES multifase)[cite: 5]<br>
+                    • Mogerman (2012) - CS2 (Biomassa con CM at Risk)[cite: 5]<br>
+                    • Fraunhofer IEG Bochum (Pilot HTHP+MTES)[cite: 5]<br><br>
+                    <em>Identikit:</em> Grandi opere civili vincolate (Waterfall) ma con commissioning, testing e integrazione modulare delle tecnologie energetiche gestiti a cicli iterativi[cite: 5].
+                </td>
+                <td>
+                    <strong>Cella C / Il Cantiere Integrato:</strong><br>
+                    • Gultekin-Bicer et al. (2018) (Retrofit avanzato EIC tramite Design-Build)[cite: 5]<br><br>
+                    <em>Identikit:</em> Superamento del DBB tradizionale. Uso continuo di simulazioni energetiche dinamiche in corso d'opera e feedback continui per ri-orientare i requisiti tecnici[cite: 5].
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PPP/PRIVATO (Partenariati Pubblico-Privati / Concessioni a lungo termine)</strong></td>
+                <td>
+                    <strong>Cella D / La Rigidità Contrattuale:</strong><br>
+                    • Sofia DH Project (PPP co-finanziato UE)[cite: 5]<br>
+                    • Mogerman (2012) - CS5 (Mega-sistema privato storico)[cite: 5]<br><br>
+                    <em>Identikit:</em> Allocazione dei rischi bloccata da penali burocratiche. Vulnerabilità catastrofica a imprevisti geologici o normativi dovuta all'assenza di varianti flessibili[cite: 5].
+                </td>
+                <td>
+                    <strong>Cella E / La Gestione Adattiva di Asset:</strong><br>
+                    • Wang et al. (2019) (ZK City - Concessione 25 anni a carbone pulito)[cite: 5]<br>
+                    • Mogerman (2012) - CS7 (DH privato con impianti temporanei)[cite: 5]<br><br>
+                    <em>Identikit:</em> Il procurement impone macro-fasi costruttive rigide, ma la lunghissima fase operativa (O&M) richiede logiche semi-adattive e risposte flessibili alla domanda energetica[cite: 5].
+                </td>
+                <td>
+                    <strong>Cella F / La Governance Relazionale:</strong><br>
+                    • Ghafghazi et al. (2010) (Caso Vancouver - approccio multi-stakeholder)[cite: 5]<br>
+                    • Bahadori et al. (2025) (Modernizzazione modulare 4GDH+TES)[cite: 5]<br><br>
+                    <em>Identikit:</em> Processo decisionale non lineare guidato da modelli multicriterio. Flussi di lavoro evolutivi in cui l'infrastruttura (grazie al TES) si adegua dinamicamente al tessuto urbano[cite: 5].
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2.3 Discussione dei Risultati e Trend Emergenti</h2>
+    
+    <p>L'analisi comparativa condotta attraverso la matrice tassonomica permette di far emergere alcune macro-evidenze fondamentali, capaci di ridefinire radicalmente il nesso causale e operativo che sussiste tra le scelte di ingegneria energetica e i modelli di project management[cite: 5].</p>
+    
+    <p>Il primo trend di rilievo riguarda la netta traiettoria di ibridazione metodologica definibile come uno slittamento progressivo dal Waterfall puro verso l'alveo dell'Hybrid, che si osserva nei progetti pubblici complessi[cite: 5]. Come dimostrato in modo paradigmatico sia dal caso pilota del Fraunhofer IEG di Bochum sia dal caso studio CS1 formalizzato da Mogerman, l'inserimento strutturale di impianti di cogenerazione (CHP) e di sistemi di accumulo termico stagionale (TES/MTES) rende di fatto impraticabile l'adozione di un approccio rigidamente sequenziale, persino all'interno dei tradizionali contesti di appalto pubblico (PUB)[cite: 5]. Sebbene le opere civili primarie, quali lo scavo delle reti e la posa fisica delle condotte, mantengano una linearità esecutiva obbligata e intrinsecamente legata alle logiche predittive, le successive fasi di integrazione termodinamica, il bilanciamento delle pressioni e il complesso commissioning delle pompe di calore ad alta temperatura impongono l'adozione di cicli iterativi di ottimizzazione e testing mutuati dalle filosofie Agile[cite: 5]. Tale dualità costringe la governance manageriale a convergere stabilmente su framework di gestione ibridi, in grado di conciliare la stabilità infrastrutturale con la flessibilità tecnologica[cite: 5].</p>
+    
+    <p>In secondo luogo, la mappatura evidenzia quello che può essere definito come il blocco operativo della Cella D (storicamente indicata come una criticità contrattuale), rappresentato dall'errore di pianificazione riscontrato nel progetto di teleriscaldamento di Sofia. Questo specifico caso di studio mette in luce il fallimento patologico che si genera quando un modello esecutivo puramente lineare viene applicato a un regime di Partenariato Pubblico-Privato (PPP) in contesti fortemente dinamici[cite: 5]. Di fronte ad asimmetrie esogene insorgenti, quali gli imprevisti geologici nel sottosuolo urbano e le repentine variazioni del quadro normativo, il progetto avrebbe richiesto l'attivazione di varianti agili e flessibili[cite: 5]. Al contrario, la rigidità del contratto di concessione e la struttura decisionale sequenziale hanno convertito i vettori di rischio in veri e propri ostacoli insormontabili, culminando in un blocco del cantiere e in un ritardo di dieci mesi rispetto al cronoprogramma originario[cite: 5]. L'evidenza empirica dimostra quindi come i benefici intrinseci di un procurement orientato al mercato privato vengano interamente neutralizzati se accoppiati a una filosofia di gestione rigidamente predittiva, azzerando di fatto il Value for Money atteso dall'operazione[cite: 5].</p>
+    
+    <p>Infine, l'elemento teorico più innovativo che emerge dalla letteratura d'avanguardia, con particolare riferimento ai contributi di Ghafghazi e Bahadori, risiede nella reinterpretazione dell'accumulo termico (TES) non più come mero asset ingegneristico, bensì come un vero e proprio abilitatore tecnologico della colonna Agile all'interno del quadrante dei PPP (Cella F)[cite: 5]. Nel momento in cui il sistema introduce un TES, si realizza un disaccoppiamento termofisico e temporale tra la fase di generazione termica ed elettrica da parte del cogeneratore e la curva di carico effettiva richiesta dalle utenze finali[cite: 5]. Attenuando la criticità legata alla stabilità dei requisiti in tempo reale, tale flessibilità fisica si riflette direttamente sulla dimensione organizzativa: la governance multi-attore del partenariato viene sollevata dalla necessità di una programmazione rigidamente vincolata, potendo operare secondo logiche evolutive e adattive[cite: 5]. L'infrastruttura termica, mediata dal buffer energetico, diventa così resiliente, consentendo alle parti di validare decisioni di investimento incrementali, assorbire la volatilità dei prezzi di mercato e rinegoziare i flussi di energia senza mai compromettere la continuità e la sicurezza della rete energetica urbana[cite: 5].</p>
+
+    <h1>RIFERIMENTI BIBLIOGRAFICI</h1>
+    <div class="bibliografia">[1] Samaratova A.K. (2024). Features of Using Waterfall Methodologies in Project Management. Vestnik nauki, 4(10/79), 39-48. doi: 10.24412/2712-8849-2024-1079-39-48[cite: 1].</div>
+    <div class="bibliografia">[2] Petersen K., Wohlin C., Baca D. (2009). The Waterfall Model in Large-Scale Development. In: Bomarius F. et al. (eds), PROFES 2009, LNBIP 32, pp. 386-400. Springer, Berlin. https://doi.org/10.1007/978-3-642-02152-7_29[cite: 2].</div>
+    <div class="bibliografia">[3] Thesing T., Feldmann C., Burchardt M. (2021). Agile versus Waterfall Project Management: Decision Model for Selecting the Appropriate Approach to a Project. Procedia Computer Science, 181, 746-756. https://doi.org/10.1016/j.procs.2021.01.227[cite: 3].</div>
+    <div class="bibliografia">[4] Mohamed B., Moselhi O. (2019). A Framework for Utilization of Agile Management in Construction Management. CSCE Annual Conference, Laval (Greater Montreal), Paper CON21[cite: 4].</div>
+    <div class="bibliografia">[5] Grimsey D., Lewis M.K. (2007). Public Private Partnerships and Public Procurement. Agenda: A Journal of Policy Analysis and Reform, 14, 171-188[cite: 5].</div>
+    <div class="bibliografia">[6] Scharle P. (2002). Public-Private Partnership (PPP) as a Social Game. Innovation: The European Journal of Social Science Research, 15(3), 227-252. https://doi.org/10.1080/1351161022000027630.</div>
+    <div class="bibliografia">[7] Ross T.W., Yan J. (2015). Comparing Public-Private Partnerships and Traditional Public Procurement: Efficiency vs. Flexibility. Journal of Comparative Policy Analysis, 17(5), 448-466. https://doi.org/10.1080/13876988.2015.1029333.</div>
+    <div class="bibliografia">[8] Guelpa E., Bischi A., Verda V., Chertkov M., Lund H. (2021). Towards Future Infrastructures for Sustainable Multi-Energy Systems. Energy, 184, 2-21. [Citato per: Guelpa et al. (2021), MPC su CHP+DH con TES; cfr. anche Verrilli et al. (2017), Management of a District Heating Network Using Model Predictive Control with and without Thermal Storage. Optimization and Engineering, https://doi.org/10.1007/s11081-021-09644-w].</div>
+    <div class="bibliografia">[9] Jansen J. et al. (2023). Optimal Control of a Fourth Generation District Heating Network Using an Integrated Non-Linear Model Predictive Controller. Applied Thermal Engineering. https://doi.org/10.1016/j.applthermaleng.2023.120017.</div>
+    <div class="bibliografia">[10] Castelblanco G., De Marco A., Casady C.B. (2025). A System Dynamics Approach to Concession Period Optimization in Public-Private Partnerships. SAGE Journals. https://doi.org/10.1177/1087724X251314427 [Nota]: Per la concessione DH Rozzano si veda: Osborne Clarke (2021). PPP for Rozzano's District Heating System. Report studio legale, valore €126M.</div>
+    <div class="bibliografia">[11] S. Ghafghazi, T. Sowlati, S. Sokhansanj, S. Melin, A multicriteria approach to evaluate district heating system options, Applied Energy, Volume 87, Issue 4, 2010, Pages 1134-1140, ISSN 0306-2619. https://doi.org/10.1016/j.apenergy.2009.06.021.</div>
+    <div class="bibliografia">[12] Gultekin-Bicer, P., Anumba, C. J., & Leicht, R. M. (2018). Advanced energy retrofit projects: Cross-case analysis of integrated system design. International Journal of Construction Management, 18(6), 453-466.</div>
+    <div class="bibliografia">[13] Wang, N., Chen, X., & Wu, G. (2019). Public private partnerships, a value for money solution for clean coal district heating operations. Sustainability, 11(8), 2386.</div>
+    <div class="bibliografia">[14] Bahadori, R., Speich, M., & Ulli-Beer, S. (2025). Modernizing District Heating Networks: A Strategic Decision-Support Framework for Sustainable Retrofitting. Energies, 18(14), 3759.</div>
+    <div class="bibliografia">[15] Mogerman, A. E. (2012). Project delivery and contract strategy for district energy projects-a lifecycle approach (Doctoral dissertation, University of British Columbia).</div>
+    <div class="bibliografia">[16] Boyanov, K. (2025). Opportunities for the Development of Public-Private Partnerships in Bulgaria Following the Example of United Kingdom. Rivista di Studi sulla Sostenibilità-Review of studies on sustainability-Open access, (2 Thematic Issue).</div>
+    <div class="bibliografia">[17] Passamonti, A., Sachse, F., Bombarda, P., & Bracke, R. (2025). Design, construction, and commissioning of a 500 kW high-temperature heat pump plant for the district heating network of Bochum, Germany. Energy Reports, 13, 548-561.</div>
+
+</body>
+</html>
